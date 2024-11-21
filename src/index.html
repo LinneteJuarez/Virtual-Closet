@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Pixelify+Sans:wght@400..700&family=Reenie+Beanie&family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Virtual Closet</title>
+</head>
+<body>
+    <div class="arriba">
+        <h1 class="title">Virtual Closet</h1>
+        <div class="small-box"><h4 class="boton-header">_</h4></div>
+        <div class="small-box"><h4 class="boton-header">□</h4></div>
+        <div class="small-box"><h4 class="boton-header">X</h4></div>
+    </div>   
+    <div class="contenido">
+        <div class="box">
+            <canvas class="webgl" width="720" height="540">
+            </canvas> 
+            <!-- Left side boxes -->
+        <div class="left-boxes">
+            <div class="side-box"><h2 class="arrow">&lt;</h2></div>
+            <div class="side-box"><h2 class="arrow">&lt;</h2></div>
+            <div class="side-box"><h2 class="arrow">&lt;</h2></div>
+            <div class="side-box"><h2 class="arrow">&lt;</h2></div>
+        </div>
+
+        <!-- Right side boxes -->
+        <div class="right-boxes">
+            <div class="side-box"><h2 class="arrow">></h2></div>
+            <div class="side-box"><h2 class="arrow">></h2></div>
+            <div class="side-box"><h2 class="arrow">></h2></div>
+            <div class="side-box"><h2 class="arrow">></h2></div>
+        </div>
+        
+            <div class="bottom-long-box">
+                <div class="small-box left"><h4 class="flecha"> &lt; </h4></div>     <!-- Left box -->
+                <div class="small-box middle">
+                    <div id="scroll" class="scroll"></div>
+                </div>   <!-- Middle (long) box -->
+                <div class="small-box right"><h4 class="flecha"> > </h4></div> 
+            </div>
+        </div>
+        <div class="box">
+            <div class="small-square"> <h3 class="subtitle">Colors!</h3>
+                <div class="small-box"><h4 class="boton">_</h4></div>
+                <div class="small-box"><h4 class="boton">□</h4></div>
+                <div class="small-box"><h4 class="boton">X</h4></div>
+            </div> <!-- Small square inside Box 2 -->
+            <div class="inner-box-container">
+            <div class="inner-box">
+                <!-- Cover for the inner-box -->
+        <div class="inner-box-cover">
+            <p>Change Skin Color!</p>
+        </div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+                <div class="colored-box-skin"></div>
+            </div>
+            <div class="inner-box">
+                <div class="inner-box-cover">
+                    <p>Change Hair Color!</p>
+                </div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+                <div class="colored-box-hair"></div>
+            </div>
+            <div class="inner-box">
+                <div class="inner-box-cover">
+                    <p>Change Top Color!</p>
+                </div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+                <div class="colored-box-top"></div>
+            </div>
+            <div class="inner-box">
+                <div class="inner-box-cover">
+                    <p>Change Bottom Color!</p>
+                </div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+                <div class="colored-box-bottom"></div>
+            </div>
+            <div class="inner-box">
+                <div class="inner-box-cover">
+                    <p>Change Shoes Color!</p>
+                </div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+                <div class="colored-box-shoes"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"> </script>
+</body>
+</html>

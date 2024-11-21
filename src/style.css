@@ -1,0 +1,460 @@
+body{
+    background-color:#F398B1;
+    margin: 0;
+    padding: 0;
+    height: 100%;                   /* Full height for centering */
+    display: flex;
+    align-items: center;             /* Centers vertically */
+    justify-content: center;         /* Centers horizontally */
+    font-family: Arial, sans-serif;
+}
+
+.arriba {
+    width: 100%;
+    height: 50px;
+    background-color: #FB699F;
+    border-bottom: 5px solid #681D34;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content:end; /* Distributes space evenly between the boxes */
+}
+.title{
+    padding-right: 1125px;
+    justify-self: left;
+    font-family: Pixelify Sans;
+    font-size: 35px;
+    -webkit-text-stroke: 1px #681D34;
+   color: #FB699F;
+   text-shadow:
+       3px 3px 0 #681D34,
+     -1px -1px 0 #681D34,  
+      1px -1px 0 #681D34,
+      -1px 1px 0 #681D34,
+       1px 1px 0 #681D34;
+}
+
+/* Small box styling inside arriba */
+.arriba .small-box {
+    justify-self: end;
+    display: flex;
+    align-items: center;        /* Centers text vertically */
+    justify-content: center; 
+    width: 30px;             /* Width of each small box */
+    height: 30px;            /* Height of each small box */
+    background-color: #FB699F; /* Color of the small boxes */
+    border-bottom: 5px solid #681D34;
+    border-left: 5px solid #681D34;
+    border-top: 2px solid #681D34;
+    border-right: 2px solid #681D34; /* Optional border for each box */
+    /*border-radius: 5px;       /* Rounded corners (optional) */
+}
+
+.boton-header{
+    font-family: Pixelify Sans;
+    font-size: 30px;
+   color: #681D34;  
+}
+.contenido{
+    display: flex;
+    gap: 80px;                       /* Space between boxes */
+    margin-top: 80px; 
+}
+/* Box styling */
+.contenido .box:first-child {
+    width: 800px;
+    height: 600px;
+    background-color: #FFDBE5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #681D34;
+    font-size: 20px;
+    font-weight: bold;
+    border: 5px solid #681D34;
+    position: relative;    /* Needed for positioning inner box */
+    box-shadow: 10px 10px;
+}
+
+/* Inner box styling - slightly smaller */
+.webgl {
+    width: 70%;               /* 90% of Box 1’s width */
+    height: 90%;              /* 90% of Box 1’s height */
+    background-color: #F3A4B5; /* Background color */
+    border: 5px solid #681D34;
+    box-sizing: border-box;
+    box-shadow: 3px 3px;
+    position: relative;
+    z-index: 1;
+}
+.left-boxes, .right-boxes {
+    position: absolute;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;   
+    display: flex;
+    align-items: center;
+    justify-content:center;                 
+}
+
+.left-boxes {
+    left: 20px; /* Position to the left of inner-canvas */
+}
+
+.right-boxes {
+    right: 20px; /* Position to the right of inner-canvas */
+}
+
+.arrow{
+    margin-top:8px;
+    margin-left: 18px;
+    font-family: Pixelify Sans;
+    font-size: 50px;
+    color: #681D34;  
+}
+
+/* Individual side boxes styling */
+.side-box {
+    width: 80px;
+    height: 80px;
+    background-color: #FFB0C6;
+    border: 3px solid #681D34;
+    box-shadow: 3px 3px #681D34;
+    box-sizing: border-box;
+}
+/* Long box styling at the bottom of Box 1 */
+.bottom-long-box {
+    width: 720px;               
+    height: 30px;              
+    background-color: #FFB0C6;         
+    border-bottom: 5px solid #681D34;
+    border-left:5px solid #681D34;
+    border-top:3px solid #681D34;
+    border-right:5px solid #681D34;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;                /* Flexbox layout for inner boxes */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px;
+    
+}
+.bottom-long-box .small-box {
+    height: 100%;                
+    border: 2px solid #681D34;   
+    box-sizing: border-box;
+    
+}
+
+/* Left and right boxes */
+.bottom-long-box .small-box.left,
+.bottom-long-box .small-box.right {
+    background-color: #FFDBE5;
+    width:30px;  
+    display: flex;
+    align-items: center;
+    justify-content:center;                 
+}
+
+.flecha{
+    font-family: Pixelify Sans;
+    font-size: 20px;
+    color: #681D34;  
+}
+
+/* Middle (long) box */
+.bottom-long-box .small-box.middle {
+    width: 700px;
+    background-color: #681D34;
+    position: relative;
+    display: flex; 
+    justify-content: center;    /* Center child elements horizontally */
+    align-items: center;        /* Center child elements vertically */
+}
+
+#scroll {
+    width: 300px;
+    height: 100%;
+    background-color: #FFDBE5;
+    border-top: 1px solid #681D34;
+    border-bottom: 1px solid #681D34;
+    border-right: 3px solid #681D34;
+    border-left: 3px solid #681D34;
+    position: absolute; /* Needed for free movement */
+    left: 0;            /* Start from the left */
+    cursor: grab;       /* Show grab cursor */
+    box-sizing: border-box;
+}
+
+/* Box 2 styling - make it smaller */
+.contenido .box:last-child {
+    width: 300px;   /* Smaller width */
+    height: 600px;  /* Smaller height */
+    background-color: #FFDBE5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #681D34;
+    font-size: 18px;
+    font-weight: bold;
+    border: 5px solid #681D34;
+    position: relative;
+    box-shadow: 10px 10px; 
+}
+.inner-box-container {
+    width: 100%;                 /* Full width of Box 2 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;                   /* Spacing between inner boxes */
+    align-items: center;
+    padding-bottom: 20px;        /* Optional padding at the bottom */
+    margin-top: auto;            /* Pushes the container to the bottom */
+}
+
+.small-square {
+    width: 310px;               /* Adjust width */
+    height: 40px;              /* Adjust height */
+    background-color: #FFB0C6; /* Color for the small square */
+    position: absolute;        /* Position it inside Box 2 */
+    top: -5px;                /* Move it above Box 2 */
+    left: 50%;                 /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    border: 5px solid #681D34; /* Optional border */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+}
+.small-square .small-box {
+    display: flex;
+    align-items: center;        /* Centers text vertically */
+    justify-content: center;
+    width: 20px;             /* Width of each small box */
+    height: 20px;            /* Height of each small box */
+    background-color: #FB699F; /* Color of the small boxes */
+    border-bottom: 5px solid #681D34;
+    border-left: 5px solid #681D34;
+    border-top: 2px solid #681D34;
+    border-right: 2px solid #681D34; /* Optional border for each box */
+    /*border-radius: 5px;       /* Rounded corners (optional) */
+}
+
+.inner-box {
+    width: 80%;
+    height: 100px;               /* Adjust height as needed */
+    background-color: #FB699F;
+    border: 3px solid #681D34;
+    box-sizing: border-box;
+    box-shadow: 3px 3px #681D34;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden; 
+    
+}
+
+/* Cover styling */
+.inner-box-cover {
+    position: absolute; /* Absolute to overlay the entire box */
+    top: 0;
+    left: 0;
+    width: 100%;             /* Fully cover the inner box */
+    height: 100%;
+    background-color: #FFB0C6 ;
+    border: 3px solid #681D34;       /* Match the existing borders */
+    display: flex;
+    align-items: center;            /* Center text */
+    justify-content: center;
+    z-index: 2;                     /* Ensure it's above inner-box content */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;                /* Add pointer cursor for interaction */
+}
+
+/* Text styling for the cover */
+.inner-box-cover p {
+    font-size: 20px;
+    font-family: Pixelify Sans, sans-serif;
+    color: #681D34;
+    text-shadow: 2px 2px 0 #FB699F;
+}
+
+/* Hide cover when revealed */
+.inner-box-cover.hidden {
+    opacity: 0;              /* Fade out effect */
+    visibility: hidden;      /* Remove from view */
+    pointer-events: none;    /* Disable interaction */
+}
+.colored-box-skin {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #681D34;
+    border-radius: 5px;
+    box-shadow: 2PX 2PX #681D34;
+}
+
+.colored-box-skin:nth-child(1) { background-color: #8d5524; }
+.colored-box-skin:nth-child(2) { background-color: #c68642; }
+.colored-box-skin:nth-child(3) { background-color:  #e0ac69; }
+.colored-box-skin:nth-child(4) { background-color:  #f1c27d; }
+.colored-box-skin:nth-child(5) { background-color: #ffdbac; }
+.colored-box-skin:nth-child(6) { background-color: #c96c39; }
+.colored-box-skin:nth-child(7) { background-color: #6b3e25; }
+.colored-box-skin:nth-child(8) { background-color:  #f7c7a7; }
+.colored-box-skin:nth-child(9) { background-color: #b66132; }
+.colored-box-skin:nth-child(10) { background-color: #d57d42; }
+ 
+.colored-box-hair {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #681D34;
+    border-radius: 5px;
+    box-shadow: 2PX 2PX #681D34;
+}
+
+.colored-box-hair:nth-child(1) { background-color: #9c0416; }
+.colored-box-hair:nth-child(2) { background-color: #138650; }
+.colored-box-hair:nth-child(3) { background-color:  #241c11; }
+.colored-box-hair:nth-child(4) { background-color:  #4f1a00; }
+.colored-box-hair:nth-child(5) { background-color: #9a3300; }
+.colored-box-hair:nth-child(6) { background-color: #ffc44f; }
+.colored-box-hair:nth-child(7) { background-color: #510566; }
+.colored-box-hair:nth-child(8) { background-color:  #da1b91; }
+.colored-box-hair:nth-child(9) { background-color: #3F2A1B; }
+.colored-box-hair:nth-child(10) { background-color: #E4C795; }
+
+.colored-box-top {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #681D34;
+    border-radius: 5px;
+    box-shadow: 2PX 2PX #681D34;
+}
+
+.colored-box-top:nth-child(1) { background-color: #1d0016; }
+.colored-box-top:nth-child(2) { background-color: #ffffffda; }
+.colored-box-top:nth-child(3) { background-color:  #01184d; }
+.colored-box-top:nth-child(4) { background-color:  #4d4d4d; }
+.colored-box-top:nth-child(5) { background-color: #c80700; }
+.colored-box-top:nth-child(6) { background-color: #b0d0f1; }
+.colored-box-top:nth-child(7) { background-color: #fb1597; }
+.colored-box-top:nth-child(8) { background-color:  #e69bf3; }
+.colored-box-top:nth-child(9) { background-color: #18aaa5; }
+.colored-box-top:nth-child(10) { background-color: #ebc138; }
+
+.colored-box-bottom {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #681D34;
+    border-radius: 5px;
+    box-shadow: 2PX 2PX #681D34;
+}
+
+.colored-box-bottom:nth-child(1) { background-color: #1d0016; }
+.colored-box-bottom:nth-child(2) { background-color: #b37422da; }
+.colored-box-bottom:nth-child(3) { background-color:  #01184d; }
+.colored-box-bottom:nth-child(4) { background-color:  #63ab63; }
+.colored-box-bottom:nth-child(5) { background-color: #1d4628; }
+.colored-box-bottom:nth-child(6) { background-color: #6F8FAF; }
+.colored-box-bottom:nth-child(7) { background-color: #fb1597; }
+.colored-box-bottom:nth-child(8) { background-color:  #e69bf3; }
+.colored-box-bottom:nth-child(9) { background-color: #18aaa5; }
+.colored-box-bottom:nth-child(10) { background-color: #797979; }
+
+.colored-box-shoes {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #681D34;
+    border-radius: 5px;
+    box-shadow: 2PX 2PX #681D34;
+}
+
+.colored-box-shoes:nth-child(1) { background-color: #1d0016; }
+.colored-box-shoes:nth-child(2) { background-color: #f7f7f7da; }
+.colored-box-shoes:nth-child(3) { background-color:  #faf1b4; }
+.colored-box-shoes:nth-child(4) { background-color:  #ffffff; }
+.colored-box-shoes:nth-child(5) { background-color: #1d4628; }
+.colored-box-shoes:nth-child(6) { background-color: #482400; }
+.colored-box-shoes:nth-child(7) { background-color: #fb1597; }
+.colored-box-shoes:nth-child(8) { background-color:  #ea590b; }
+.colored-box-shoes:nth-child(9) { background-color: #01234b; }
+.colored-box-shoes:nth-child(10) { background-color: #7a1297; }
+
+.subtitle {
+    padding-right: 125px;
+    font-family: Pixelify Sans;
+    font-size: 25px;
+    color: #681D34;
+}
+
+.boton {
+    font-family: Pixelify Sans;
+    font-size: 20px;
+    color: #681D34;
+}
+
+.small-box:hover {
+    background-color: #C0547A; 
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+.colored-box-skin:hover {
+    box-shadow: 5PX 5PX #681D34;
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+.colored-box-hair:hover {
+    box-shadow: 5PX 5PX #681D34;
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+
+.colored-box-top:hover {
+    box-shadow: 5PX 5PX #681D34;
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+
+.colored-box-bottom:hover {
+    box-shadow: 5PX 5PX #681D34;
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+
+.colored-box-shoes:hover {
+    box-shadow: 5PX 5PX #681D34;
+    cursor: pointer;            /* Changes cursor to pointer on hover */
+}
+
+.side-box:hover {
+    background-color: #C0547A;  /* Darker color on hover */
+    box-shadow: 2PX 2PX #681D34;
+    cursor: pointer;   
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.contenido .box:first-child,
+.contenido .box:last-child {
+    animation: float 2s ease-in-out infinite;
+}
+
+.hidden {
+    display: none;
+}
+
