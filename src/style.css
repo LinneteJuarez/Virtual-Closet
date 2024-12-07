@@ -93,17 +93,34 @@ body{
     z-index: 1;
 }
 .left-boxes, .right-boxes {
+    display: flex;
     position: absolute;
     top: 10%;
     display: flex;
     flex-direction: column;
-    gap: 50px;   
+    gap: 100px;   
     display: flex;
     align-items: center;
     justify-content:center;                 
 }
+.texto{
+    padding-left: 5px;
+    font-family: Pixelify Sans;
+    font-size: 20px;
+    color: #681D34;
+}
+
+#soundButton {
+    display: flex; /* Ensures proper centering */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    text-align: center; /* Aligns text content */
+    position: relative; /* Enables positioning */
+    top: -10px; /* Moves the text slightly upward */
+}
 
 .left-boxes {
+    top: 240px;
     left: 20px; /* Position to the left of inner-canvas */
 }
 
